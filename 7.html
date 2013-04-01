@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title></title>
+	
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	
+	<link rel="stylesheet" type="text/css" href="1.css" />
+	
+	<script type="text/javascript">
+
+	function createPrimes (subject)
+	{
+	var primes = new Array();
+	var nonprimes = new Array();
+	var i=2;
+	while (i<subject) {
+		if (!nonprimes.indexOf(i)) {
+			primes.push(i);
+			j=2;
+			while (((j*i)<subject) && (i<sqrt(subject))) {
+				nonprimes.push(i*j);
+				j++;
+			}
+		}
+	i++;
+	}
+	return primes;
+	}
+
+	
+	</script>
+</head>
+
+<body>
+<h1>Problem 7</h1>
+<p>
+
+	<script type="text/javascript">
+		var primes = createPrimes(100);
+		for (var i in primes) {
+			document.write(primes[i] + " ")
+		}
+	</script>
+
+</p>
+</body>
+
+</html>
